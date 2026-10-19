@@ -101,7 +101,7 @@ TOTAL_END=$(date +%s)
 # ------------------------------------------------------------------------------
 log_header "All 6 Pipeline Steps Completed Successfully in $((TOTAL_END - TOTAL_START))s!"
 echo -e "${BOLD}${GREEN}Generated Pipeline Assets:${RESET}"
-echo -e "  - ${BOLD}Quality Control:${RESET}     ${PIPELINE_ROOT}/results/01_qc/ (FastQC HTML & fastp JSON/HTML)"
+echo -e "  - ${BOLD}Quality Control:${RESET}     ${PIPELINE_ROOT}/results/01_qc/ (Pure text TSV metrics & summary tables)"
 echo -e "  - ${BOLD}Alignment & BAMs:${RESET}    ${PIPELINE_ROOT}/results/02_alignment/ (Sorted BAM, BAI, flagstat)"
 echo -e "  - ${BOLD}Quantification:${RESET}      ${PIPELINE_ROOT}/results/03_quantification/ (Raw counts & TPM matrix)"
 echo -e "  - ${BOLD}Differential Expr:${RESET}   ${PIPELINE_ROOT}/results/04_dea/ (Full statistics & top DEGs)"

@@ -31,7 +31,7 @@
 		"too_long_reads": 0
 	},
 	"duplication": {
-		"rate": 0.0163213
+		"rate": 0.0163403
 	},
 	"adapter_cutting": {
 		"adapter_trimmed_reads": 230,
@@ -219,5 +219,5 @@
 		"overrepresented_sequences": {
 		}
 	},
-	"command": "fastp -i /home/abdul/Bioinformatics_projects/COVID19_Transcriptome_Analysis/data/raw_fastq/SRR11573896_1.fastq.gz -o /home/abdul/Bioinformatics_projects/COVID19_Transcriptome_Analysis/data/trimmed_fastq/SRR11573896_clean.fastq.gz -h /home/abdul/Bioinformatics_projects/COVID19_Transcriptome_Analysis/results/01_qc/fastp/SRR11573896_fastp.html -j /home/abdul/Bioinformatics_projects/COVID19_Transcriptome_Analysis/results/01_qc/fastp/SRR11573896_fastp.json -q 20 -u 30 -l 35 --detect_adapter_for_pe -w 2 "
+	"command": "fastp -i /home/abdul/Bioinformatics_projects/COVID19_Transcriptome_Analysis/data/raw_fastq/SRR11573896_1.fastq.gz -o /home/abdul/Bioinformatics_projects/COVID19_Transcriptome_Analysis/data/trimmed_fastq/SRR11573896_clean.fastq.gz -h /dev/null -j /home/abdul/Bioinformatics_projects/COVID19_Transcriptome_Analysis/results/01_qc/fastp/SRR11573896_fastp.json -q 20 -u 30 -l 35 --detect_adapter_for_pe -w 2 "
 }

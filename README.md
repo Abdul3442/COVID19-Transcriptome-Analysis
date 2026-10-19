@@ -37,7 +37,7 @@ COVID19_Transcriptome_Analysis/
 │   └── step6_generate_figures.py        # Step 6: Publication-grade vector figure suite
 │
 └── results/                       # Standardized 6-step output directory
-    ├── 01_qc/                     # FastQC reports (raw & clean) + fastp JSON/HTML
+    ├── 01_qc/                     # Quality control metrics & fastp trimming TSV/JSON summary tables
     ├── 02_alignment/              # Sorted BAM files, BAI indexes, and flagstat reports
     ├── 03_quantification/         # featureCounts raw matrix & TPM abundance table
     ├── 04_dea/                    # Full DEG tables, top up/down tables, hallmark genes
@@ -90,8 +90,8 @@ COVID19_Transcriptome_Analysis/
 - **Outputs**:
   - `data/raw_fastq/`: Raw sequence files (`.fastq.gz`).
   - `data/trimmed_fastq/`: Filtered, high-quality sequences (`.fastq.gz`).
-  - `results/01_qc/fastqc_raw/` & `fastqc_clean/`: Interactive HTML and zip metrics.
-  - `results/01_qc/fastp/`: Quality reports confirming $>95\%$ reads passed filter with average Phred $>Q30$.
+  - `results/01_qc/fastqc_raw/` & `fastqc_clean/`: Quality metrics and summary tables.
+  - `results/01_qc/fastp_trimming_summary.tsv`: Parsed tabular report confirming $>95\%$ reads passed filter with average Phred $>Q30$.
 
 ### Step 2: Read Alignment & Mapping (`scripts/step2_alignment_hisat2.sh`)
 - **Tools**: `hisat2 v2.2.3`, `samtools v1.9`

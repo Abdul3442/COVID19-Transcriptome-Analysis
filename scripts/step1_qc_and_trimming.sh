@@ -16,6 +16,7 @@ FASTP_DIR="${QC_DIR}/fastp"
 
 CONDA_BIN="/home/abdul/miniconda3/envs/rnaseq_pipeline/bin"
 SRA_BIN="/home/abdul/miniconda3/bin"
+PYTHON_BIN="${PROJECT_ROOT}/venv/bin/python3"
 export PATH="${CONDA_BIN}:${SRA_BIN}:$PATH"
 
 mkdir -p "${RAW_FASTQ_DIR}" "${TRIMMED_FASTQ_DIR}" "${FASTQC_RAW_DIR}" "${FASTQC_CLEAN_DIR}" "${FASTP_DIR}"
@@ -38,17 +39,18 @@ for SRA_ID in "${SAMPLES[@]}"; do
         echo ">>> Raw reads already present for ${SRA_ID}: ${RAW_FASTQ}"
     fi
 
-    # 1. FastQC on Raw Reads
+    # 1. FastQC on Raw Reads (Text and Zip output only)
     echo ">>> Running FastQC on raw reads for ${SRA_ID}..."
     fastqc --outdir "${FASTQC_RAW_DIR}" -t 2 "${RAW_FASTQ}"
+    rm -f "${FASTQC_RAW_DIR}/${SRA_ID}_1_fastqc.html"
 
-    # 2. Quality Trimming & Adapter Removal via fastp
+    # 2. Quality Trimming & Adapter Removal via fastp (Pure JSON & terminal output, no HTML)
     CLEAN_FASTQ="${TRIMMED_FASTQ_DIR}/${SRA_ID}_clean.fastq.gz"
     echo ">>> Running fastp quality & adapter trimming for ${SRA_ID}..."
     fastp \
         -i "${RAW_FASTQ}" \
         -o "${CLEAN_FASTQ}" \
-        -h "${FASTP_DIR}/${SRA_ID}_fastp.html" \
+        -h /dev/null \
         -j "${FASTP_DIR}/${SRA_ID}_fastp.json" \
         -q 20 \
         -u 30 \
@@ -56,9 +58,43 @@ for SRA_ID in "${SAMPLES[@]}"; do
         --detect_adapter_for_pe \
         -w 2
 
-    # 3. FastQC on Cleaned Reads
+    # 3. FastQC on Cleaned Reads (Text and Zip output only)
     echo ">>> Running post-trimming FastQC on cleaned reads for ${SRA_ID}..."
     fastqc --outdir "${FASTQC_CLEAN_DIR}" -t 2 "${CLEAN_FASTQ}"
+    rm -f "${FASTQC_CLEAN_DIR}/${SRA_ID}_clean_fastqc.html"
 done
+
+# 4. Pure Python QC Summary Generator: Parse JSON into Clean TSV Table
+echo ">>> Compiling QC metrics into TSV tables via Python..."
+"${PYTHON_BIN}" -c "
+import os
+import json
+import pandas as pd
+
+qc_dir = '${FASTP_DIR}'
+records = []
+for s in ['SRR11573904', 'SRR11573908', 'SRR11573892', 'SRR11573896']:
+    json_path = os.path.join(qc_dir, f'{s}_fastp.json')
+    if os.path.exists(json_path):
+        with open(json_path, 'r') as f:
+            d = json.load(f)
+        before = d.get('summary', {}).get('before_filtering', {})
+        after = d.get('summary', {}).get('after_filtering', {})
+        records.append({
+            'sample_id': s,
+            'raw_reads': before.get('total_reads', 0),
+            'clean_reads': after.get('total_reads', 0),
+            'passed_pct': round((after.get('total_reads', 0) / before.get('total_reads', 1)) * 100, 2),
+            'raw_q30_pct': round(before.get('q30_rate', 0) * 100, 2),
+            'clean_q30_pct': round(after.get('q30_rate', 0) * 100, 2),
+            'duplication_pct': round(d.get('duplication', {}).get('rate', 0) * 100, 2)
+        })
+
+df = pd.DataFrame(records)
+out_tsv = os.path.join('${QC_DIR}', 'fastp_trimming_summary.tsv')
+df.to_csv(out_tsv, sep='\t', index=False)
+print(f'Saved QC trimming summary TSV -> {out_tsv}')
+print(df.to_string(index=False))
+"
 
 echo -e "\n>>> Step 1 (Quality Control & Trimming) completed successfully!"
