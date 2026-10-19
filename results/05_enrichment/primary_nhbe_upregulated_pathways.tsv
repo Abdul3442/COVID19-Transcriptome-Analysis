@@ -1,0 +1,12 @@
+pathway	overlap_count	pathway_gene_count	deg_query_count	odds_ratio	pvalue	genes	padj
+GO: Response to type I interferon	1	20	4	215.228	0.006493748629973793	IRF9	0.04995304846517769
+GO: Defense response to virus	1	28	4	151.358	0.009082372448214126	IRF9	0.04995304846517769
+GO: Cytokine-mediated signaling pathway	0	21	4	0.0	1.0		1.0
+GO: Regulation of inflammatory response	0	16	4	0.0	1.0		1.0
+GO: Neutrophil degranulation / activation	0	5	4	0.0	1.0		1.0
+KEGG: Coronavirus disease - COVID-19	0	23	4	0.0	1.0		1.0
+KEGG: NF-kappa B signaling pathway	0	19	4	0.0	1.0		1.0
+KEGG: TNF signaling pathway	0	18	4	0.0	1.0		1.0
+KEGG: Cytokine-cytokine receptor interaction	0	15	4	0.0	1.0		1.0
+Reactome: Interleukin-6 signaling	0	11	4	0.0	1.0		1.0
+Reactome: Chemokine receptors bind chemokines	0	6	4	0.0	1.0		1.0

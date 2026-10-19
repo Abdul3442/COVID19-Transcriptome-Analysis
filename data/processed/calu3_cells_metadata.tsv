@@ -1,0 +1,7 @@
+sample_id	series	cell_tissue	condition	replicate	group
+Series7_Calu3_Mock_1	Series7	Calu3	Mock	1	Control
+Series7_Calu3_Mock_2	Series7	Calu3	Mock	2	Control
+Series7_Calu3_Mock_3	Series7	Calu3	Mock	3	Control
+Series7_Calu3_SARS-CoV-2_1	Series7	Calu3	SARS-CoV-2	1	COVID19
+Series7_Calu3_SARS-CoV-2_2	Series7	Calu3	SARS-CoV-2	2	COVID19
+Series7_Calu3_SARS-CoV-2_3	Series7	Calu3	SARS-CoV-2	3	COVID19

@@ -1,0 +1,26 @@
+# Python virtual environment
+venv/
+ENV/
+env/
+*.pyc
+__pycache__/
+
+# Intermediate large alignment files (BAM / BAI / SAM)
+*.bam
+*.bai
+*.sam
+results/02_alignment/*.bam
+results/02_alignment/*.bai
+results/02_alignment/*.sam
+
+# Raw and trimmed FASTQ sequencing reads (downloaded dynamically via script)
+data/raw_fastq/*.fastq.gz
+data/trimmed_fastq/*.fastq.gz
+
+# Large HISAT2 genome index binary files (reproducible from FASTA via step2)
+references/hisat2_index/*.ht2
+
+# Temporary directories and caches
+/tmp/
+.cache/
+.DS_Store

@@ -1,0 +1,2 @@
+cohort	total_genes_tested	significant_upregulated	significant_downregulated	not_significant	lfc_cutoff	fdr_cutoff
+clinical_lung	13822	24	643	13155	1.0	0.05

@@ -1,0 +1,17 @@
+cohort	sample_id	condition	group	total_reads	genes_detected_gt0	genes_detected_ge10	sparsity_percent	top50_genes_read_fraction_percent
+clinical_lung	Series15_HealthyLungBiopsy_2	Healthy_Control	Control	16660521	16890	14619	22.51	16.7
+clinical_lung	Series15_HealthyLungBiopsy_1	Healthy_Control	Control	30716754	17500	14763	19.71	17.85
+clinical_lung	Series15_COVID19Lung_2	COVID-19	COVID19	1203024	9892	6195	54.62	41.14
+clinical_lung	Series15_COVID19Lung_1	COVID-19	COVID19	76756	4975	999	77.18	43.35
+primary_nhbe	Series1_NHBE_Mock_1	Mock	Control	11258863	14661	12058	32.74	17.58
+primary_nhbe	Series1_NHBE_Mock_2	Mock	Control	10256909	14640	12070	32.83	16.86
+primary_nhbe	Series1_NHBE_Mock_3	Mock	Control	16601859	14710	12503	32.51	16.76
+primary_nhbe	Series1_NHBE_SARS-CoV-2_1	SARS-CoV-2	COVID19	10195139	14664	11941	32.72	17.55
+primary_nhbe	Series1_NHBE_SARS-CoV-2_2	SARS-CoV-2	COVID19	9904002	14539	11870	33.3	17.56
+primary_nhbe	Series1_NHBE_SARS-CoV-2_3	SARS-CoV-2	COVID19	29316471	14996	12970	31.2	17.83
+calu3_cells	Series7_Calu3_Mock_1	Mock	Control	7040604	14283	11807	34.47	14.1
+calu3_cells	Series7_Calu3_Mock_2	Mock	Control	12743206	14862	12379	31.82	15.44
+calu3_cells	Series7_Calu3_Mock_3	Mock	Control	28888715	15534	13199	28.73	14.4
+calu3_cells	Series7_Calu3_SARS-CoV-2_1	SARS-CoV-2	COVID19	15062604	15387	12754	29.41	13.79
+calu3_cells	Series7_Calu3_SARS-CoV-2_2	SARS-CoV-2	COVID19	8161561	14543	12134	33.28	13.68
+calu3_cells	Series7_Calu3_SARS-CoV-2_3	SARS-CoV-2	COVID19	15541675	15514	12863	28.83	14.16

@@ -1,0 +1,13 @@
+# Program:featureCounts v2.0.6; Command:"featureCounts" "-a" "/home/abdul/Bioinformatics_projects/COVID19_Transcriptome_Analysis/references/viral_genome/SARS_CoV_2_ASM985889v3_genomic.gff" "-t" "gene" "-g" "ID" "-o" "/home/abdul/Bioinformatics_projects/COVID19_Transcriptome_Analysis/results/03_quantification/featurecounts_raw.txt" "-T" "2" "/home/abdul/Bioinformatics_projects/COVID19_Transcriptome_Analysis/results/02_alignment/SRR11573904_sorted.bam" "/home/abdul/Bioinformatics_projects/COVID19_Transcriptome_Analysis/results/02_alignment/SRR11573908_sorted.bam" "/home/abdul/Bioinformatics_projects/COVID19_Transcriptome_Analysis/results/02_alignment/SRR11573892_sorted.bam" "/home/abdul/Bioinformatics_projects/COVID19_Transcriptome_Analysis/results/02_alignment/SRR11573896_sorted.bam" 
+Geneid	Chr	Start	End	Strand	Length	/home/abdul/Bioinformatics_projects/COVID19_Transcriptome_Analysis/results/02_alignment/SRR11573904_sorted.bam	/home/abdul/Bioinformatics_projects/COVID19_Transcriptome_Analysis/results/02_alignment/SRR11573908_sorted.bam	/home/abdul/Bioinformatics_projects/COVID19_Transcriptome_Analysis/results/02_alignment/SRR11573892_sorted.bam	/home/abdul/Bioinformatics_projects/COVID19_Transcriptome_Analysis/results/02_alignment/SRR11573896_sorted.bam
+gene-GU280_gp01	NC_045512.2	266	21555	+	21290	1134	1094	0	0
+gene-GU280_gp02	NC_045512.2	21563	25384	+	3822	494	417	0	0
+gene-GU280_gp03	NC_045512.2	25393	26220	+	828	261	208	0	0
+gene-GU280_gp04	NC_045512.2	26245	26472	+	228	65	54	0	0
+gene-GU280_gp05	NC_045512.2	26523	27191	+	669	542	522	0	0
+gene-GU280_gp06	NC_045512.2	27202	27387	+	186	11	24	0	0
+gene-GU280_gp07	NC_045512.2	27394	27759	+	366	486	438	0	0
+gene-GU280_gp08	NC_045512.2	27756	27887	+	132	2	3	0	0
+gene-GU280_gp09	NC_045512.2	27894	28259	+	366	625	514	0	0
+gene-GU280_gp10	NC_045512.2	28274	29533	+	1260	6913	7253	0	0
+gene-GU280_gp11	NC_045512.2	29558	29674	+	117	1617	1477	0	0

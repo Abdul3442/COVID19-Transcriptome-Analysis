@@ -1,0 +1,7 @@
+sample_id	series	cell_tissue	condition	replicate	group
+Series1_NHBE_Mock_1	Series1	NHBE	Mock	1	Control
+Series1_NHBE_Mock_2	Series1	NHBE	Mock	2	Control
+Series1_NHBE_Mock_3	Series1	NHBE	Mock	3	Control
+Series1_NHBE_SARS-CoV-2_1	Series1	NHBE	SARS-CoV-2	1	COVID19
+Series1_NHBE_SARS-CoV-2_2	Series1	NHBE	SARS-CoV-2	2	COVID19
+Series1_NHBE_SARS-CoV-2_3	Series1	NHBE	SARS-CoV-2	3	COVID19

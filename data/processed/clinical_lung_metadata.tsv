@@ -1,0 +1,5 @@
+sample_id	series	cell_tissue	condition	replicate	group
+Series15_HealthyLungBiopsy_2	Series15	Human_Lung_Tissue	Healthy_Control	2	Control
+Series15_HealthyLungBiopsy_1	Series15	Human_Lung_Tissue	Healthy_Control	1	Control
+Series15_COVID19Lung_2	Series15	Human_Lung_Tissue	COVID-19	2	COVID19
+Series15_COVID19Lung_1	Series15	Human_Lung_Tissue	COVID-19	1	COVID19

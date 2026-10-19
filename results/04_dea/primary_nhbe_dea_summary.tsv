@@ -1,0 +1,2 @@
+cohort	total_genes_tested	significant_upregulated	significant_downregulated	not_significant	lfc_cutoff	fdr_cutoff
+primary_nhbe	12291	4	0	12287	1.0	0.05
